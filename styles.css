@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header {
+    background-color: #add8e6;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+aside.sidebar {
+    background-color: #ffdab9;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;/* Використання CSS-змінних для легкого управління кольорами та розмірами */
+:root {
+    --header-bg-color: #add8e6;
+    --left-sidebar-bg: #ffdab9;
+    --right-sidebar-bg: #ffdab9;
+    --main-content-bg: #ffffff;
+    --bottom-info-bg: #d3f3c3;
+    --footer-bg-color: #add8e6;
+    --sidebar-width: 200px;
+    --header-height: 119px; /* Ця змінна дозволить налаштувати висоту хедера, якщо вона зміниться */
+}
+
+
+
+/* Основні стилі тіла та контейнера */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+
+header {
+    background-color: var(--header-bg-color);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+
+
+/* Сайдбари */
+aside.sidebar {
+    background-color: var(--left-sidebar-bg);
+    padding: 20px;
+    box-sizing: border-box;
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Правий сайдбар з фіксованим позиціонуванням */
+aside.sidebar.right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--right-sidebar-bg);
+    z-index: 2;
+    /* Уникаємо хардкодингу, використовуючи змінну */
+    top: var(--header-height);
+}
+
+
+
+
+
+
+/* Центральна частина контенту */
+.main-and-center-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    /* Залишаємо місце під правий сайдбар без хардкодингу */
+    margin-right: var(--sidebar-width);
+}
+
+
+
+main {
+    background-color: var(--main-content-bg);
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+
+.bottom-info {
+    background-color: var(--bottom-info-bg);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+
+
+/* Футер */
+footer {
+    background-color: var(--footer-bg-color);
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1; /* футер під блоком 4 */
+    /* Залишаємо місце під правий сайдбар */
+    margin-right: var(--sidebar-width);
+}
+
+
+
+/* Адаптивність для зображення */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Додаткові стилі для мобільних пристроїв */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+
+
+    aside.sidebar.left,
+    aside.sidebar.right,
+    .main-and-center-content,
+    footer {
+        width: 100%;
+        position: static;
+        margin-right: 0;
+        margin-top: 0;
+        top: auto;
+    }
+}
+
+
+    flex-direction: column;
+}
+
+aside.sidebar.right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: #ffdab9;
+    z-index: 2;
+    margin-top: 20px; /* чтобы не перекрывать хедер */
+}
+
+
+.main-and-center-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    margin-right: 200px; /* оставляем место под сайдбар 4 */
+}
+
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.bottom-info {
+    background-color: #d3f3c3;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+footer {
+    background-color: #add8e6;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1; /* футер под блоком 4 */
+    margin-right: 200px;
+}
