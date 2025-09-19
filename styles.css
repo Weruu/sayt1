@@ -1,8 +1,8 @@
 /* Використання CSS-змінних для легкого управління кольорами та розмірами */
 :root {
     --header-bg-color: #add8e6;
-    --left-sidebar-bg: #ffdab9;
-    --right-sidebar-bg: #ffdab9;
+    --left-sidebar-bg: #163d55;
+    --right-sidebar-bg: #163d55;
     --main-content-bg: #ffffff;
     --bottom-info-bg: #d3f3c3;
     --footer-bg-color: #add8e6;
